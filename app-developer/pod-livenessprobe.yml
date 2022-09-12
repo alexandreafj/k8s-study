@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: myapp
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
+    livenessProbe:
+        # httpGet:
+        #   path: /api/healthy
+        #   port: 8080
+          # initialDelaySecond: 10 time to warm up pod
+          # periodSecond: 5 if u like how offen to probe
+          # failureThreshold: 8 after some attemps the probe stop , if u want to continua more x times
+        # tcpSocket:
+        #   port: 3306
+        # exec:
+        #   command: 
+        #     - cat
+        #     - /app/is_healthy

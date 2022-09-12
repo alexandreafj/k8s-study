@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  Service Name
+spec:
+  selector:
+    app:  myapp
+    type: back-end
+  type:  ClusterIP
+  ports:
+  - targetPort:  name-of-the-port
+    port:  80

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicationSet
+metadata:
+  name: myapp
+  labels:
+    app: myapp
+    function: frontend
+  annotations:
+    buildversion: 1.34
+spec:
+  replicas: <Replicas>
+  selector:
+    app: myapp
+  template:
+    metadata:
+      name: myapp
+      labels:
+        app: myapp
+        function: frontend
+    spec:
+      containers:
+        - name: myapp
+          image: <Image>
+          ports:
+            - containerPort: <Port>

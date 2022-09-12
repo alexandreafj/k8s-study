@@ -1,0 +1,12 @@
+k8s apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-sleeper-pod
+spec:
+  containers:
+  - name: ubuntu-sleeper
+    image: ubuntu-sleeper
+    args: ["10"]
+    env:
+      - name: APP_COLOR
+        value: pink

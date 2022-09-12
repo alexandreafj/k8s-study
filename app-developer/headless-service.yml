@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  mysql-h
+spec:
+  selector:
+    app:  mysql
+  ports:
+    - port: 3306
+  clusterip: None
+  #on the pod u must use subdomain: mysql-h and hostname: mysql-pod
+  #on a statefulset u must specify inside spec serviceName: mysql-h , this is how statefulset knows who headlesservice he needs to use.
